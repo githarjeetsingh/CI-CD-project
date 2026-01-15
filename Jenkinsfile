@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "githarjeetsingh/ci-cd-project"
+        IMAGE_NAME = "docharjeetsingh/ci-cd-project"
         IMAGE_TAG  = "latest"
     }
 
