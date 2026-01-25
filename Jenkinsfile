@@ -1,8 +1,10 @@
 pipeline {
     agent any
+
     environment {
         IMAGE_NAME = "docharjeetsingh/ci-cd-project"
         IMAGE_TAG  = "latest"
+        SONAR_PROJECT_KEY = "ci-cd-project"
     }
 
     stages {
@@ -11,6 +13,19 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/githarjeetsingh/ci-cd-project.git'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                    sh '''
+                    sonar-scanner \
+                    -Dsonar.projectKey=$SONAR_PROJECT_KEY \
+                    -Dsonar.sources=. \
+                    -Dsonar.language=html,css
+                    '''
+                }
             }
         }
 
