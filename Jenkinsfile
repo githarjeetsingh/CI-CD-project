@@ -10,8 +10,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                      git branch: 'main',
-                git 'https://github.com/harjeetsingh/ci-cd-project.git'
+                // Correct way to checkout 'main' branch
+                git branch: 'main', url: 'https://github.com/harjeetsingh/ci-cd-project.git'
             }
         }
 
