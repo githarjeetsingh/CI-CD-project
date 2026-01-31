@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    environment {
+    environment {  
         SONAR_SCANNER_HOME = tool 'SonarQubeScanner'
         DOCKER_IMAGE = "docharjeetsingh/my-app"
     }
