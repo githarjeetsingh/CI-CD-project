@@ -56,7 +56,7 @@ pipeline {
                 sh """
                 docker stop my-app || true
                 docker rm my-app || true
-                docker run -d -p 80:8085 --name my-app $DOCKER_IMAGE
+                docker run -d -p 80:80 --name my-app $DOCKER_IMAGE
                 """
             }
         }
