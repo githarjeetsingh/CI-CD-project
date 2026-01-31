@@ -11,7 +11,9 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Correct way to checkout 'main' branch
-                git branch: 'main', url: 'https://github.com/harjeetsingh/ci-cd-project.git'
+                git branch: 'main', url: 'https://github.com/harjeetsingh/ci-cd-project.git' 
+                
+            credentialsId: 'github-credential'
             }
         }
 
