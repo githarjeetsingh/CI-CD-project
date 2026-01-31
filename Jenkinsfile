@@ -12,7 +12,7 @@ pipeline {
             steps {
                 // Checkout 'main' branch with credentials
                 git branch: 'main', 
-                    url: 'https://github.com/harjeetsingh/ci-cd-project.git',
+                    url: 'https://github.com/githarjeetsingh/ci-cd-project.git',
                     credentialsId: 'github-credential'
             }
         }
