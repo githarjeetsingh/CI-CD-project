@@ -10,9 +10,10 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                // Correct way to checkout 'main' branch
-                git branch: 'main', url: 'https://github.com/harjeetsingh/ci-cd-project.git' 
-                credentialsId: 'github-credential'
+                // Checkout 'main' branch with credentials
+                git branch: 'main', 
+                    url: 'https://github.com/harjeetsingh/ci-cd-project.git',
+                    credentialsId: 'github-credential'
             }
         }
 
